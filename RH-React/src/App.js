@@ -1,8 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import ListadoEmpleados from "./empleados/ListadoEmpleados";
+import ListadoDocentes from "./docentes/ListadoDocentes";
 import Navegacion from "./plantilla/Navegacion";
-import AgregarEmpleado from "./empleados/AgregarEmpleado";
-import EditarEmpleado from "./empleados/EditarEmpleado";
+import AgregarDocente from "./docentes/AgregarDocente";
+import EditarDocente from "./docentes/EditarDocente";
 
 function App() {
   return (
@@ -10,9 +10,9 @@ function App() {
       <BrowserRouter>
         <Navegacion />
         <Routes>
-          <Route exact path="/" element={<ListadoEmpleados/>} />
-          <Route exact path="/agregar" element={<AgregarEmpleado/>} />
-          <Route exact path="/editar/:id" element={<EditarEmpleado/>} />
+          <Route exact path="/" element={<ListadoDocentes/>} />
+          <Route exact path="/agregar" element={<AgregarDocente/>} />
+          <Route exact path="/editar/:id" element={<EditarDocente/>} />
         </Routes>
       </BrowserRouter>
     </div>

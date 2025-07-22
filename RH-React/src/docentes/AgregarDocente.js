@@ -1,46 +1,36 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-export default function EditarEmpleado() {
+export default function AgregarDocente() {
 
     let navegacion = useNavigate();
-    const { id } = useParams();
 
-    const [empleado, setEmpleado] = useState({
+    const [docente, setDocente] = useState({
         nombre: '',
         departamento: '',
         sueldo: ''
     });
 
-    useEffect(() => {
-        cargarEmpleado();
-    }, []);
-
-    const cargarEmpleado = async () => {
-        const resultado = await axios.get(`http://localhost:8080/rh-app/empleados/${id}`);
-        setEmpleado(resultado.data);
-    }
-
-    const { nombre, departamento, sueldo } = empleado;
+    const { nombre, departamento, sueldo } = docente;
 
     const onInputChange = (e) => {
         //spread operator ... (expandir los atributos)
-        setEmpleado({ ...empleado, [e.target.name]: e.target.value });
+        setDocente({ ...docente, [e.target.name]: e.target.value });
     }
 
     const onSubmit = async (e) => {
         e.preventDefault();
-        const urlBase = `http://localhost:8080/rh-app/empleados/${id}`;
-        await axios.put(urlBase, empleado);
-        // Redireccionar a la lista de empleados
+        const urlBase = "http://localhost:8080/rh-app/docentes";
+        await axios.post(urlBase, docente);
+        // Redireccionar a la lista de docentes
         navegacion('/');
     }
 
     return (
         <div className='container'>
             <div className="container text-center" style={{ margin: "30px" }}>
-                <h3>Editar Empleado</h3>
+                <h3>Agregar Docente</h3>
             </div>
             <form onSubmit={(e) => onSubmit(e)}>
                 <div className="mb-3">
@@ -59,7 +49,7 @@ export default function EditarEmpleado() {
                         value={sueldo} onChange={(e) => onInputChange(e)}/>
                 </div>
                 <div className="text-center">
-                    <button type="submit" className="btn btn-warning btn-sm me-3">Guardar</button>
+                    <button type="submit" className="btn btn-warning btn-sm me-3">Agregar</button>
                     <a href="/" className="btn btn-danger btn-sm">Regresar</a>
                 </div>
             </form>

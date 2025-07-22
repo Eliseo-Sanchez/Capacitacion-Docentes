@@ -1,3 +1,8 @@
-pruebas xd
-segunda prueba
-tercera prueba
+Descarga de postgresql
+https://www.enterprisedb.com/downloads/postgres-postgresql-downloads
+
+Descarga de mongodb
+https://www.mongodb.com/try/download/community
+https://www.mongodb.com/try/download/shell
+https://www.mongodb.com/try/download/database-tools
+

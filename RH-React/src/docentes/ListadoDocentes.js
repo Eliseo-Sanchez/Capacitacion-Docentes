@@ -2,32 +2,32 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 
-export default function ListadoEmpleados() {
+export default function ListadoDocentes() {
 
-    const urlBase = "/rh-app/empleados";
+    const urlBase = "/rh-app/docentes";
 
-    const [empleados, setEmpleados] = useState([]);
+    const [docentes, setDocentes] = useState([]);
 
     useEffect(() => {
-        cargarEmpleados();
+        cargarDocentes();
     }, []);
 
-    const cargarEmpleados = async () => {
+    const cargarDocentes = async () => {
         const resultado = await axios.get(urlBase);
-        console.log("Resultado cargar empleados");
+        console.log("Resultado cargar docentes");
         console.log(resultado.data);
-        setEmpleados(resultado.data);
+        setDocentes(resultado.data);
     }
 
-    const eliminarEmpleado = async (id) => {    
+    const eliminarDocente = async (id) => {    
         await axios.delete(`${urlBase}/${id}`);
-        cargarEmpleados();
+        cargarDocentes();
     }
 
     return (
         <div className='container'>
             <div className="container text-center" style={{ margin: "30px" }}>
-                <h3>Sistema de Recursos Humanos</h3>
+                <h3>Sistema de Capacitación Docentes</h3>
             </div>
 
             <table className="table table-striped table-hover align-middle">
@@ -41,17 +41,17 @@ export default function ListadoEmpleados() {
                     </tr>
                 </thead>
                 <tbody>
-                    {empleados.map((empleado, indice) => (
+                    {docentes.map((docente, indice) => (
                         <tr key={indice}>
-                            <th scope="row">{empleado.idEmpleado}</th>
-                            <td>{empleado.nombre}</td>
-                            <td>{empleado.departamento}</td>
-                            <td>${empleado.sueldo}</td>
+                            <th scope="row">{docente.idDocente}</th>
+                            <td>{docente.nombre}</td>
+                            <td>{docente.departamento}</td>
+                            <td>${docente.sueldo}</td>
                             <td className='text-center'>
                                 <div>
-                                    <Link to={`/editar/${empleado.idEmpleado}`} 
+                                    <Link to={`/editar/${docente.idDocente}`} 
                                     className='btn btn-warning btn-sm me-3'>Editar</Link>
-                                    <button onClick={() => eliminarEmpleado(empleado.idEmpleado)}
+                                    <button onClick={() => eliminarDocente(docente.idDocente)}
                                         className='btn btn-danger btn-sm'
                                     >Eliminar</button>
                                 </div>
