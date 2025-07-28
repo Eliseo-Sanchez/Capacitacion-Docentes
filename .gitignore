@@ -1,0 +1,101 @@
+# ========================================
+# GITIGNORE UNIFICADO PARA PROYECTO CAPACITACION DOCENTES
+# Contiene reglas para React (CD-React) y Spring Boot (CD-Spring)
+# ========================================
+
+# ========================================
+# SPRING BOOT (CD-Spring/)
+# ========================================
+CD-Spring/HELP.md
+CD-Spring/target/
+CD-Spring/.mvn/wrapper/maven-wrapper.jar
+!CD-Spring/**/src/main/**/target/
+!CD-Spring/**/src/test/**/target/
+
+### STS ###
+CD-Spring/.apt_generated
+CD-Spring/.classpath
+CD-Spring/.factorypath
+CD-Spring/.project
+CD-Spring/.settings
+CD-Spring/.springBeans
+CD-Spring/.sts4-cache
+
+### IntelliJ IDEA ###
+CD-Spring/.idea
+CD-Spring/*.iws
+CD-Spring/*.iml
+CD-Spring/*.ipr
+
+### NetBeans ###
+CD-Spring/nbproject/private/
+CD-Spring/nbbuild/
+CD-Spring/dist/
+CD-Spring/nbdist/
+CD-Spring/.nb-gradle/
+CD-Spring/build/
+!CD-Spring/**/src/main/**/build/
+!CD-Spring/**/src/test/**/build/
+
+# ========================================
+# REACT (CD-React/)
+# ========================================
+# Dependencies
+CD-React/node_modules/
+CD-React/.pnp
+CD-React/.pnp.js
+
+# Testing
+CD-React/coverage/
+
+# Production
+CD-React/build/
+
+# Environment variables
+CD-React/.env.local
+CD-React/.env.development.local
+CD-React/.env.test.local
+CD-React/.env.production.local
+
+# Logs
+CD-React/npm-debug.log*
+CD-React/yarn-debug.log*
+CD-React/yarn-error.log*
+
+# ========================================
+# EDITORES Y SISTEMAS OPERATIVOS
+# ========================================
+### VS Code ###
+.vscode/
+
+### macOS ###
+.DS_Store
+.AppleDouble
+.LSOverride
+
+### Windows ###
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+### Linux ###
+*~
+
+# ========================================
+# ARCHIVOS TEMPORALES Y DE RESPALDO
+# ========================================
+*.tmp
+*.temp
+*.log
+*.bak
+*.swp
+*.swo
+
+# ========================================
+# CONFIGURACIONES SENSIBLES
+# ========================================
+.env
+config/local.js
+secrets/
+.secrets/
