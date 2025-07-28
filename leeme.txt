@@ -5,7 +5,3 @@ Descarga de mongodb
 https://www.mongodb.com/try/download/community
 https://www.mongodb.com/try/download/shell
 https://www.mongodb.com/try/download/database-tools
-
-xd shell
-cmabio desde cristian g
-cambios desde main
